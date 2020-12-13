@@ -1,0 +1,28 @@
+print()
+cost_per_year = float(input('Enter cost per year: '))
+interest_per_year = float(input('Enter interest per year as a decimal: '))
+total_years = int(input('Enter number of years: '))
+x = 0
+total_sum = cost_per_year * total_years
+total_sum_with_interest = 0
+
+# Loop to iterate through each yearly addition to investment
+for year in range(0,(total_years)):
+    y = cost_per_year * (1 + interest_per_year)**(total_years - x)
+    total_sum_with_interest = total_sum_with_interest + y
+    x = x + 1
+    # print(x)
+    # print(y)
+    # print(total_sum_with_interest)
+
+rounded_total_sum = round(total_sum, 2)
+rounded_total_sum_with_interest = round(total_sum_with_interest,2)
+
+print()
+print('Over ' + str(total_years) + ' years, at ' + str(interest_per_year*100) + '% annual interest,')
+print('Total cost, with investing, is $' + str(rounded_total_sum_with_interest))
+print('Total cost, without investing, is $' + str(rounded_total_sum))
+print('Difference between invested and uninvested sums is $' + str(round((rounded_total_sum_with_interest - rounded_total_sum),2)))
+print()
+print('SAVE MONEY AND INVEST IT, YOU IDIOT!')
+print()
